@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccountManager", "src\app\AccountManager.vcxproj", "{08352804-92B0-3A99-A862-CA4A3C9F0787}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccountManagerTests", "test\app\AccountManagerTests.vcxproj", "{3155F73B-9576-38D4-A7E4-92234D804A9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		GoogleTest|x64 = GoogleTest|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08352804-92B0-3A99-A862-CA4A3C9F0787}.Debug|x64.ActiveCfg = Debug|x64
+		{08352804-92B0-3A99-A862-CA4A3C9F0787}.Debug|x64.Build.0 = Debug|x64
+		{08352804-92B0-3A99-A862-CA4A3C9F0787}.GoogleTest|x64.ActiveCfg = GoogleTest|x64
+		{08352804-92B0-3A99-A862-CA4A3C9F0787}.GoogleTest|x64.Build.0 = GoogleTest|x64
+		{08352804-92B0-3A99-A862-CA4A3C9F0787}.Release|x64.ActiveCfg = Release|x64
+		{08352804-92B0-3A99-A862-CA4A3C9F0787}.Release|x64.Build.0 = Release|x64
+		{3155F73B-9576-38D4-A7E4-92234D804A9A}.Debug|x64.ActiveCfg = Debug|x64
+		{3155F73B-9576-38D4-A7E4-92234D804A9A}.Debug|x64.Build.0 = Debug|x64
+		{3155F73B-9576-38D4-A7E4-92234D804A9A}.GoogleTest|x64.ActiveCfg = GoogleTest|x64
+		{3155F73B-9576-38D4-A7E4-92234D804A9A}.GoogleTest|x64.Build.0 = GoogleTest|x64
+		{3155F73B-9576-38D4-A7E4-92234D804A9A}.Release|x64.ActiveCfg = Release|x64
+		{3155F73B-9576-38D4-A7E4-92234D804A9A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = Qt 5.14
+		SolutionGuid = {78503BD2-0591-4D5A-B4FF-50E70E7A7884}
+	EndGlobalSection
+EndGlobal

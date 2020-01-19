@@ -3,7 +3,7 @@
 
 #include <sstream>
 
-#include "caisseepargnestatementreader.h"
+#include <caisseepargnestatementreader.h>
 
 using namespace testing;
 
