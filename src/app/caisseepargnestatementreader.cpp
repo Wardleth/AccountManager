@@ -8,7 +8,7 @@
 #include <sstream>
 #include <iomanip>
 
-Statement CaisseEpargneStatementReader::readStatement(std::istream &is) {
+Statement CaisseEpargneStatementReader::readStatement(std::istream &is, Currency currency) {
     std::string line;
     std::getline(is, line);
     auto statementData = StringUtils::split(line, ';');
@@ -30,7 +30,7 @@ Statement CaisseEpargneStatementReader::readStatement(std::istream &is) {
     else {
         throw InvalidStatementListException();
     }
-    return Statement(date, amount, StringUtils::trim(statementData[2]), StringUtils::trim(statementData[5]), currency_);
+    return Statement(date, amount, StringUtils::trim(statementData[2]), StringUtils::trim(statementData[5]), currency);
 }
 
 StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) {
@@ -52,7 +52,7 @@ StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) 
     if (currencyData == metadata.end()) {
         throw InvalidStatementListException();
     }
-    currency_ = stringToCurrency(currencyData->second);
+    Currency currency = stringToCurrency(currencyData->second);
 
     std::string tmp;
     while (std::getline(is, tmp) && !StringUtils::startsWith("Solde en fin de période", tmp)) {}
@@ -64,7 +64,7 @@ StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) 
     std::list<Statement> statements;
     while (std::getline(is, tmp) && !StringUtils::startsWith("Solde en début de période", tmp)) {
         std::istringstream iis(tmp);
-        statements.push_front(readStatement(iis));
+        statements.push_front(readStatement(iis, currency));
     }
     double startBalance = extractBalance(tmp);
 
