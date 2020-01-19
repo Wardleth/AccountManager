@@ -19,4 +19,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 include(gui/gui.pri)
 
 SOURCES += \
-        main.cpp
+    main.cpp \
+    caisseepargnestatementreader.cpp \
+    account.cpp \
+    repository.cpp
+
+HEADERS += \
+    caisseepargnestatementreader.h \
+    statementreader.h \
+    statement.h \
+    statementkind.h \
+    account.h \
+    repository.h
