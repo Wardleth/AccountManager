@@ -20,19 +20,22 @@
     <Filter Include="Libs">
       <UniqueIdentifier>{9df9e3c4-a634-4248-9330-8c20c21bc01c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gtest">
+      <UniqueIdentifier>{ea61338c-3bd8-4bbb-a18b-41e44a58790a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\Programmation\googletest\googlemock\src\gmock-all.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\Programmation\googletest\googletest\src\gtest-all.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tst_caisseepargnestatementreader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Programmation\googletest\googletest\src\gtest-all.cc">
+      <Filter>Source Files\gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Programmation\googletest\googlemock\src\gmock-all.cc">
+      <Filter>Source Files\gtest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

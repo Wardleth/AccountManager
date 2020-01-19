@@ -1,9 +1,9 @@
-#ifndef STATEMENTREADER_H
-#define STATEMENTREADER_H
+#pragma once
 
 #include <istream>
 
 #include "statement.h"
+#include "statementlist.h"
 
 class StatementReader
 {
@@ -13,6 +13,5 @@ public:
     StatementReader& operator=(const StatementReader& other) = delete;
     virtual ~StatementReader() = default;
     virtual Statement readStatement(std::istream& is) = 0;
+    virtual StatementList readStatementList(std::istream& is) = 0;
 };
-
-#endif // STATEMENTREADER_H

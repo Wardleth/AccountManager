@@ -1,16 +1,28 @@
-#ifndef STATEMENT_H
-#define STATEMENT_H
+#pragma once
 
+#include "currency.h"
+
+#include <string>
 #include <chrono>
 
-#include "statementkind.h"
-
-struct Statement
+class Statement
 {
-    double amount;
-    //std::time_t date;
-    StatementKind type;
-    std::string details;
-};
+public:
+    Statement(const std::tm& date, double amount, const std::string& label, const std::string& details, Currency currency);
 
-#endif // STATEMENT_H
+    bool isCredit() const;
+    bool isDebit() const;
+
+    std::tm date() const;
+    double amount() const;
+    std::string label() const;
+    std::string details() const;
+    Currency currency() const;
+
+private:
+    std::tm date_;
+    double amount_;
+    std::string label_;
+    std::string details_;
+    Currency currency_;
+};

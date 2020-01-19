@@ -55,6 +55,9 @@
     <ClCompile Include="statement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h">
@@ -78,6 +81,18 @@
     <ClInclude Include="statementreader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="statementlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="currency.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="invalidstatementlistexception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -86,7 +101,6 @@
     <CustomBuild Include="release\moc_predefs.h.cbt">
       <Filter>Generated Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="googletest\moc_predefs.h.cbt" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="gui\mainwindow.ui">

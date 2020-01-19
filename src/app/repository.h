@@ -1,10 +1,7 @@
-#ifndef REPOSITORY_H
-#define REPOSITORY_H
+#pragma once
 
 class Repository
 {
 public:
     Repository();
 };
-
-#endif // REPOSITORY_H
