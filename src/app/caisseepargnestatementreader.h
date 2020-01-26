@@ -3,6 +3,7 @@
 #include "statementreader.h"
 
 #include <map>
+#include <list>
 
 class CaisseEpargneStatementReader : public StatementReader
 {
@@ -12,5 +13,7 @@ public:
 
 private:
     std::map<std::string, std::string> readMetadata(std::istream& is);
-    double extractBalance(const std::string& line);
+    double extractDouble(const std::string& value) const;
+    double extractBalance(const std::string& line) const;
+    void ensureValidity(double balanceDelta, const std::list<Statement>& statements) const;
 };

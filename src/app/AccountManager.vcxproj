@@ -278,7 +278,7 @@
   <ItemGroup>
     <ClInclude Include="account.h" />
     <ClInclude Include="caisseepargnestatementreader.h" />
-    <ClInclude Include="invalidstatementlistexception.h" />
+    <ClInclude Include="malformedstatementlistexception.h" />
     <ClInclude Include="utils.h" />
     <QtMoc Include="gui\mainwindow.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GoogleTest|x64'">true</ExcludedFromBuild>

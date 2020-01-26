@@ -90,7 +90,7 @@
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="invalidstatementlistexception.h">
+    <ClInclude Include="malformedstatementlistexception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
