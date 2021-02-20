@@ -6,34 +6,43 @@
       <Extensions>ui</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Form Files">
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Qt">
+      <UniqueIdentifier>{5bcc129f-e252-424c-a057-a54164b8950d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qt\Header Files">
+      <UniqueIdentifier>{20275da2-0a38-42d0-954e-8228bc2bc41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qt\Source Files">
+      <UniqueIdentifier>{5261886e-dc5f-4125-9ce2-345fa0fc4bee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qt\Form Files">
       <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
       <Extensions>ui</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Generated Files">
+    <Filter Include="Qt\Generated Files">
       <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
-    </Filter>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,9 +55,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gui\mainwindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="repository.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,6 +62,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\mainwindow.cpp">
+      <Filter>Qt\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Qt\QtApplication.cpp">
+      <Filter>Qt\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unexpectedcurrencyexception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="currency.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bank.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="statementgroup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,16 +93,10 @@
     <ClInclude Include="caisseepargnestatementreader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <QtMoc Include="gui\mainwindow.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <ClInclude Include="repository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="statement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="statementkind.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="statementreader.h">
@@ -93,18 +114,41 @@
     <ClInclude Include="malformedstatementlistexception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Qt\QtApplication.h">
+      <Filter>Qt\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="statementgroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unexpectedcurrencyexception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
-      <Filter>Generated Files</Filter>
+      <Filter>Qt\Generated Files</Filter>
     </CustomBuild>
     <CustomBuild Include="release\moc_predefs.h.cbt">
-      <Filter>Generated Files</Filter>
+      <Filter>Qt\Generated Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="gui\mainwindow.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Qt\Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="gui\mainwindow.h">
+      <Filter>Qt\Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

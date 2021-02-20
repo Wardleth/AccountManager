@@ -7,7 +7,9 @@
 struct StatementList
 {
 	std::string bankId;
-	std::string counterId;
+	std::string agencyId;
 	std::string accountNumber;
+	double startBalance;
+	double endBalance;
 	std::vector<Statement> items;
 };

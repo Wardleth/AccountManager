@@ -1,11 +1,10 @@
 #include "statement.h"
 
-Statement::Statement(const std::tm& date, double amount, const std::string& label, const std::string& details, Currency currency):
+Statement::Statement(const std::tm& date, double amount, const std::string& label, const std::string& details):
 	date_(date),
 	amount_(amount),
 	label_(label),
-	details_(details),
-	currency_(currency)
+	details_(details)
 {}
 
 bool Statement::isCredit() const {
@@ -32,6 +31,6 @@ std::string Statement::details() const {
 	return details_;
 }
 
-Currency Statement::currency() const {
-	return currency_;
+std::weak_ptr<const StatementGroup> Statement::group() const {
+	return group_;
 }

@@ -1,6 +1,7 @@
 #include "caisseepargnestatementreader.h"
 
 #include "malformedstatementlistexception.h"
+#include "unexpectedcurrencyexception.h"
 
 #include "utils.h"
 
@@ -12,7 +13,7 @@
 static constexpr int STATEMENT_COLUMNS_COUNT = 6;
 static constexpr int BALANCE_COLUMNS_COUNT = 5;
 
-Statement CaisseEpargneStatementReader::readStatement(std::istream& is, Currency currency) {
+Statement CaisseEpargneStatementReader::readStatement(std::istream& is) {
     std::string line;
     std::getline(is, line);
     auto statementData = StringUtils::split(line, ';');
@@ -20,17 +21,17 @@ Statement CaisseEpargneStatementReader::readStatement(std::istream& is, Currency
         throw MalformedStatementListException();
     }
 
-    std::regex date_time_regex("([0-9]{2}) / ([0-9]{2}) / ([0-9]{2})");
+    std::regex date_time_regex("([0-9]{2})\\s*/\\s*([0-9]{2})\\s*/\\s*([0-9]{2})");
     std::smatch result;
-    if (!std::regex_match(statementData[0], date_time_regex)) {
+    if (!std::regex_search(statementData[0], result, date_time_regex)) {
         throw MalformedStatementListException();
     }
     std::istringstream iss(statementData[0]);
     std::tm date = {};
-    iss >> std::get_time(&date, "%d / %m / %y");
-    if (iss.fail()) {
-        throw MalformedStatementListException();
-    }
+    iss >> std::get_time(&date, "%d/%m/%y");
+    date.tm_mday = std::stoi(result[1]);
+    date.tm_mon = std::stoi(result[2]) - 1; // tm_mon is 0-based
+    date.tm_year = std::stoi(result[3]) + 100; // result[3] is year since 2000, but tm_year expect year since 1900
 
     if (!statementData[3].empty() && !statementData[4].empty()) {
         throw MalformedStatementListException();
@@ -52,7 +53,7 @@ Statement CaisseEpargneStatementReader::readStatement(std::istream& is, Currency
         throw MalformedStatementListException();
     }
 
-    return Statement(date, amount, StringUtils::trim(statementData[2]), StringUtils::trim(statementData[5]), currency);
+    return Statement(date, amount, StringUtils::trim(statementData[2]), StringUtils::trim(statementData[5]));
 }
 
 StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) {
@@ -62,8 +63,8 @@ StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) 
     if (bankCodeData == metadata.end() || bankCodeData->second.size() != 5) {
         throw MalformedStatementListException();
     }
-    auto counterCodeData = metadata.find("Code de l'agence");
-    if (counterCodeData == metadata.end() || counterCodeData->second.size() != 5) {
+    auto agencyCodeData = metadata.find("Code de l'agence");
+    if (agencyCodeData == metadata.end() || agencyCodeData->second.size() != 5) {
         throw MalformedStatementListException();
     }
     auto accountNumberData = metadata.find("Numéro de compte");
@@ -74,7 +75,12 @@ StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) 
     if (currencyData == metadata.end()) {
         throw MalformedStatementListException();
     }
-    Currency currency = stringToCurrency(currencyData->second);
+
+    if (auto currency = expectedCurrency_.lock()) {
+        if (currencyData->second != currency->code()) {
+            throw UnexpectedCurrencyException(currencyData->second);
+        }
+    }
 
     std::string tmp;
     while (std::getline(is, tmp) && !StringUtils::startsWith("Solde en fin de période", tmp)) {}
@@ -85,7 +91,7 @@ StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) 
     std::list<Statement> statements;
     while (std::getline(is, tmp) && !StringUtils::startsWith("Solde en début de période", tmp)) {
         std::istringstream iis(tmp);
-        statements.push_front(readStatement(iis, currency));
+        statements.push_front(readStatement(iis));
     }
     double startBalance = extractBalance(tmp);
 
@@ -93,8 +99,10 @@ StatementList CaisseEpargneStatementReader::readStatementList(std::istream& is) 
 
     return {
         bankCodeData->second,
-        counterCodeData->second,
+        agencyCodeData->second,
         accountNumberData->second,
+        startBalance,
+        endBalance,
         std::vector<Statement>(statements.begin(), statements.end())
     };
 }
@@ -118,9 +126,11 @@ std::map<std::string, std::string> CaisseEpargneStatementReader::readMetadata(st
 }
 
 double CaisseEpargneStatementReader::extractDouble(const std::string& valueStr) const {
-    char* end = nullptr;
-    double value = std::strtod(valueStr.c_str(), &end);
-    if (end == nullptr || strcmp(valueStr.c_str(), end) == 0) {
+    std::istringstream iss(valueStr);
+    iss.imbue(std::locale("fr_FR.UTF8"));
+    double value;
+    iss >> value;
+    if (iss.fail()) {
         throw MalformedStatementListException();
     }
 
@@ -147,3 +157,6 @@ void CaisseEpargneStatementReader::ensureValidity(double balanceDelta, const std
     }
 }
 
+CaisseEpargneStatementReader::CaisseEpargneStatementReader(std::weak_ptr<Currency> expectedCurrency) :
+    expectedCurrency_(expectedCurrency)
+{}

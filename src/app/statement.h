@@ -1,28 +1,34 @@
 #pragma once
 
+#include "statementgroup.h"
 #include "currency.h"
 
 #include <string>
 #include <chrono>
+#include <memory>
 
 class Statement
 {
 public:
-    Statement(const std::tm& date, double amount, const std::string& label, const std::string& details, Currency currency);
-
-    bool isCredit() const;
-    bool isDebit() const;
-
     std::tm date() const;
     double amount() const;
     std::string label() const;
     std::string details() const;
-    Currency currency() const;
+    std::weak_ptr<const StatementGroup> group() const;
+
+    bool isCredit() const;
+    bool isDebit() const;
+
+    Statement(const std::tm& date, double amount, const std::string& label, const std::string& details);
+    Statement(const Statement&) = default;
+    Statement& operator=(const Statement&) = default;
 
 private:
+    long id_;
     std::tm date_;
     double amount_;
     std::string label_;
     std::string details_;
-    Currency currency_;
+
+    std::weak_ptr<const StatementGroup> group_;
 };

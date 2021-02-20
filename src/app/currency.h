@@ -4,19 +4,21 @@
 #include <string>
 #include <stdexcept>
 
-enum class Currency
+class Currency
 {
-	Euro
-};
+public:
+	std::string code() const;
+	std::string name() const;
+	std::string number() const;
+	std::string symbol() const;
 
-const static std::map<std::string, Currency> CurrencyMap{
-	{ "EUR", Currency::Euro }
-};
+	Currency(const std::string& code, const std::string& name, const std::string& number, const std::string& symbol);
+	Currency(const Currency&) = delete;
+	Currency& operator=(const Currency&) = delete;
 
-inline Currency stringToCurrency(const std::string& currencyString) {
-	auto currency = CurrencyMap.find(currencyString);
-	if (currency == CurrencyMap.end()) {
-		throw std::runtime_error("Unkown currency");
-	}
-	return currency->second;
-}
+private:
+	std::string code_;
+	std::string name_;
+	std::string number_;
+	std::string symbol_;
+};

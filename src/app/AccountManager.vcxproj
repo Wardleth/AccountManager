@@ -266,19 +266,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="account.cpp" />
+    <ClCompile Include="bank.cpp" />
     <ClCompile Include="caisseepargnestatementreader.cpp" />
+    <ClCompile Include="currency.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="gui\mainwindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GoogleTest|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Qt\QtApplication.cpp" />
     <ClCompile Include="repository.cpp" />
     <ClCompile Include="statement.cpp" />
+    <ClCompile Include="statementgroup.cpp" />
+    <ClCompile Include="unexpectedcurrencyexception.cpp" />
+    <ClCompile Include="user.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="bank.h" />
     <ClInclude Include="caisseepargnestatementreader.h" />
     <ClInclude Include="malformedstatementlistexception.h" />
+    <ClInclude Include="Qt\QtApplication.h" />
+    <ClInclude Include="unexpectedcurrencyexception.h" />
+    <ClInclude Include="user.h" />
     <ClInclude Include="utils.h" />
     <QtMoc Include="gui\mainwindow.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GoogleTest|x64'">true</ExcludedFromBuild>
@@ -286,7 +297,7 @@
     <ClInclude Include="currency.h" />
     <ClInclude Include="repository.h" />
     <ClInclude Include="statement.h" />
-    <ClInclude Include="statementkind.h" />
+    <ClInclude Include="statementgroup.h" />
     <ClInclude Include="statementlist.h" />
     <ClInclude Include="statementreader.h" />
   </ItemGroup>

@@ -233,6 +233,11 @@
   <ItemGroup>
     <Library Include="..\..\src\app\googletest\AccountManagerGT.lib" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\app\AccountManager.vcxproj">
+      <Project>{08352804-92b0-3a99-a862-ca4a3c9f0787}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

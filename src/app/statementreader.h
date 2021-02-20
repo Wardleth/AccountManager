@@ -12,6 +12,6 @@ public:
     StatementReader(const StatementReader& other) = delete;
     StatementReader& operator=(const StatementReader& other) = delete;
     virtual ~StatementReader() = default;
-    virtual Statement readStatement(std::istream& is, Currency currency) = 0;
+    virtual Statement readStatement(std::istream& is) = 0;
     virtual StatementList readStatementList(std::istream& is) = 0;
 };
