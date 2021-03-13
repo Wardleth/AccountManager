@@ -1,4 +1,4 @@
-#include "currency.h"
+#include "Currency.h"
 
 std::string Currency::code() const {
 	return code_;

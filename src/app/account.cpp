@@ -1,7 +1,7 @@
-#include "account.h"
+#include "Account.h"
 
-bool Account::AddStatement(const Statement& statement) {
-	(void)statement;
+bool Account::AddTransaction(const TransactionData& transaction) {
+	(void)transaction;
 	return false;
 }
 

@@ -265,41 +265,41 @@
     </QtUic>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="account.cpp" />
-    <ClCompile Include="bank.cpp" />
-    <ClCompile Include="caisseepargnestatementreader.cpp" />
-    <ClCompile Include="currency.cpp" />
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Bank.cpp" />
+    <ClCompile Include="CaisseEpargneTransactionReader.cpp" />
+    <ClCompile Include="Currency.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="gui\mainwindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GoogleTest|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Qt\QtApplication.cpp" />
-    <ClCompile Include="repository.cpp" />
-    <ClCompile Include="statement.cpp" />
-    <ClCompile Include="statementgroup.cpp" />
-    <ClCompile Include="unexpectedcurrencyexception.cpp" />
-    <ClCompile Include="user.cpp" />
-    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="Repository.cpp" />
+    <ClCompile Include="Transaction.cpp" />
+    <ClCompile Include="TransactionGroup.cpp" />
+    <ClCompile Include="UnexpectedCurrencyException.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="account.h" />
+    <ClInclude Include="Account.h" />
     <ClInclude Include="Application.h" />
-    <ClInclude Include="bank.h" />
-    <ClInclude Include="caisseepargnestatementreader.h" />
-    <ClInclude Include="malformedstatementlistexception.h" />
+    <ClInclude Include="Bank.h" />
+    <ClInclude Include="CaisseEpargneTransactionReader.h" />
+    <ClInclude Include="MalformedTransactionListException.h" />
     <ClInclude Include="Qt\QtApplication.h" />
-    <ClInclude Include="unexpectedcurrencyexception.h" />
-    <ClInclude Include="user.h" />
-    <ClInclude Include="utils.h" />
+    <ClInclude Include="UnexpectedCurrencyException.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="Utils.h" />
     <QtMoc Include="gui\mainwindow.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='GoogleTest|x64'">true</ExcludedFromBuild>
     </QtMoc>
-    <ClInclude Include="currency.h" />
-    <ClInclude Include="repository.h" />
-    <ClInclude Include="statement.h" />
-    <ClInclude Include="statementgroup.h" />
-    <ClInclude Include="statementlist.h" />
-    <ClInclude Include="statementreader.h" />
+    <ClInclude Include="Currency.h" />
+    <ClInclude Include="Repository.h" />
+    <ClInclude Include="Transaction.h" />
+    <ClInclude Include="TransactionGroup.h" />
+    <ClInclude Include="TransactionList.h" />
+    <ClInclude Include="TransactionReader.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

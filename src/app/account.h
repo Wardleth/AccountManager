@@ -1,8 +1,8 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
 
-#include "statement.h"
-#include "bank.h"
+#include "Transaction.h"
+#include "Bank.h"
 
 #include <vector>
 #include <string>
@@ -11,7 +11,7 @@
 class Account
 {
 public:
-    bool AddStatement(const Statement& statement);
+    bool AddTransaction(const TransactionData& transaction);
 
     std::string iban() const;
     std::weak_ptr<const Currency> currency() const;
@@ -22,7 +22,7 @@ public:
 
 private:
     std::string iban_;
-    std::vector<Statement> statements_;
+    std::vector<TransactionData> transactions_;
     std::weak_ptr<const Currency> currency_;
 };
 

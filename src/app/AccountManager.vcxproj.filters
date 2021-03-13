@@ -46,22 +46,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="account.cpp">
+    <ClCompile Include="Account.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="caisseepargnestatementreader.cpp">
+    <ClCompile Include="CaisseEpargneTransactionReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="repository.cpp">
+    <ClCompile Include="Repository.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="statement.cpp">
+    <ClCompile Include="Transaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils.cpp">
+    <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="gui\mainwindow.cpp">
@@ -70,48 +70,48 @@
     <ClCompile Include="Qt\QtApplication.cpp">
       <Filter>Qt\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="unexpectedcurrencyexception.cpp">
+    <ClCompile Include="UnexpectedCurrencyException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="currency.cpp">
+    <ClCompile Include="Currency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bank.cpp">
+    <ClCompile Include="Bank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="user.cpp">
+    <ClCompile Include="User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="statementgroup.cpp">
+    <ClCompile Include="TransactionGroup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="account.h">
+    <ClInclude Include="Account.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="caisseepargnestatementreader.h">
+    <ClInclude Include="CaisseEpargneTransactionReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="repository.h">
+    <ClInclude Include="Repository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="statement.h">
+    <ClInclude Include="Transaction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="statementreader.h">
+    <ClInclude Include="TransactionReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="statementlist.h">
+    <ClInclude Include="TransactionList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="currency.h">
+    <ClInclude Include="Currency.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
+    <ClInclude Include="Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="malformedstatementlistexception.h">
+    <ClInclude Include="MalformedTransactionListException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
@@ -120,16 +120,16 @@
     <ClInclude Include="Qt\QtApplication.h">
       <Filter>Qt\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bank.h">
+    <ClInclude Include="Bank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="user.h">
+    <ClInclude Include="User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="statementgroup.h">
+    <ClInclude Include="TransactionGroup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="unexpectedcurrencyexception.h">
+    <ClInclude Include="UnexpectedCurrencyException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

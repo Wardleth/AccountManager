@@ -1,15 +1,15 @@
 #pragma once
 
-#include "statement.h"
+#include "Transaction.h"
 
 #include <vector>
 
-struct StatementList
+struct TransactionList
 {
 	std::string bankId;
 	std::string agencyId;
 	std::string accountNumber;
 	double startBalance;
 	double endBalance;
-	std::vector<Statement> items;
+	std::vector<TransactionData> items;
 };

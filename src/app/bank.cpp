@@ -1,4 +1,4 @@
-#include "bank.h"
+#include "Bank.h"
 
 std::string Bank::bic() const {
 	return bic_;
