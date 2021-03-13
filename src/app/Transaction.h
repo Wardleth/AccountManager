@@ -1,23 +1,28 @@
 #pragma once
 
+#include "TransactionData.h"
 #include "TransactionGroup.h"
-#include "currency.h"
 
-#include <string>
-#include <chrono>
 #include <memory>
 
-struct TransactionData
+class Transaction
 {
+public:
+    std::tm date() const;
+    double amount() const;
+    std::string label() const;
+    std::string details() const;
+    std::weak_ptr<const TransactionGroup> group() const;
+
     bool isCredit() const;
     bool isDebit() const;
 
-    TransactionData(const std::tm& date, double amount, const std::string& label, const std::string& details);
-    TransactionData(const TransactionData&) = default;
-    TransactionData& operator=(const TransactionData&) = default;
+    Transaction(const std::tm& date, double amount, const std::string& label, const std::string& details);
+    Transaction(const Transaction&) = delete;
+    Transaction& operator=(const Transaction&) = delete;
 
-    std::tm date;
-    double amount;
-    std::string label;
-    std::string details;
+private:
+    long id_;
+    TransactionData data_;
+    std::weak_ptr<const TransactionGroup> group_;
 };

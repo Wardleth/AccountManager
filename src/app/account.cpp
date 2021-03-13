@@ -1,6 +1,6 @@
 #include "Account.h"
 
-bool Account::AddTransaction(const TransactionData& transaction) {
+bool Account::AddTransaction(const Transaction& transaction) {
 	(void)transaction;
 	return false;
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TransactionReader.h"
+#include "Currency.h"
 
 #include <map>
 #include <list>

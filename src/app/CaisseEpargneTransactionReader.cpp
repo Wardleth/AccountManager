@@ -53,7 +53,7 @@ TransactionData CaisseEpargneTransactionReader::readTransaction(std::istream& is
         throw MalformedTransactionListException();
     }
 
-    return TransactionData(date, amount, StringUtils::trim(statementData[2]), StringUtils::trim(statementData[5]));
+    return TransactionData{ date, amount, StringUtils::trim(statementData[2]), StringUtils::trim(statementData[5]) };
 }
 
 TransactionList CaisseEpargneTransactionReader::readTransactionList(std::istream& is) {

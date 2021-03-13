@@ -3,6 +3,7 @@
 
 #include "Transaction.h"
 #include "Bank.h"
+#include "Currency.h"
 
 #include <vector>
 #include <string>
@@ -11,7 +12,7 @@
 class Account
 {
 public:
-    bool AddTransaction(const TransactionData& transaction);
+    bool AddTransaction(const Transaction& transaction);
 
     std::string iban() const;
     std::weak_ptr<const Currency> currency() const;
@@ -22,7 +23,7 @@ public:
 
 private:
     std::string iban_;
-    std::vector<TransactionData> transactions_;
+    std::vector<Transaction> transactions_;
     std::weak_ptr<const Currency> currency_;
 };
 

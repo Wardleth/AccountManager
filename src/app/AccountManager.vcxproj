@@ -288,6 +288,7 @@
     <ClInclude Include="CaisseEpargneTransactionReader.h" />
     <ClInclude Include="MalformedTransactionListException.h" />
     <ClInclude Include="Qt\QtApplication.h" />
+    <ClInclude Include="TransactionData.h" />
     <ClInclude Include="UnexpectedCurrencyException.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="Utils.h" />
